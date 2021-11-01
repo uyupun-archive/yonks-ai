@@ -1,0 +1,9 @@
+version: '3'
+services:
+  yonks_python:
+    build: .
+    container_name: yonks_python
+    working_dir: /app
+    tty: true
+    volumes:
+      - ./:/app
