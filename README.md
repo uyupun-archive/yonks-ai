@@ -1,6 +1,7 @@
 # yonks-ai
 
 # Sample Param
+```
 {
   "user": {
     "user_id": 0,
@@ -29,3 +30,4 @@
     }
   ]
 }
+```
