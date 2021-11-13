@@ -1,8 +1,7 @@
 import numpy as np
 from fastapi import FastAPI
 from pydantic import BaseModel
-from typing import Optional, List
-import logging
+from typing import List
 
 
 def euclidean_distance(x, y):
@@ -32,11 +31,8 @@ def read_item(features: User):
     user = np.array(features.user.feature)
     friends = np.array([f.feature for f in features.friends])
     dist = euclidean_distance(user, friends).argsort().tolist()
-    logger = logging.getLogger('uvicorn')
-    logger.info(dist)
 
     friends_id = [f.user_id for f in features.friends]
     result = dict(zip(friends_id, dist))
-    logger.info(result)
 
     return result
